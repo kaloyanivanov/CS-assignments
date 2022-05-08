@@ -1,0 +1,82 @@
+﻿<Window x:Class="StudentInfoSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1" xmlns:vms="clr-namespace:StudentInfoSystem"
+        mc:Ignorable="d"
+        Title="Студентска информационна система" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Stretch="Uniform" >
+            <Image.Source >
+                <BitmapImage UriSource="R.png" />
+            </Image.Source>
+        </Image>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Header="Лични данни">
+                <Grid HorizontalAlignment="Left"  VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" Content="Име:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Grid.Column="0" Grid.Row="1" Content="Презиме:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Grid.Column="0" Grid.Row="2" Content="Фамилия:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="Name" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="Surname" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="Family" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Header="Студентска информация">
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Grid.Column="0" Content="Факултет:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Grid.Row="1"  Grid.Column="0" Content="Специалност:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Grid.Row="2"  Grid.Column="0" Content="ОКС:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Grid.Row="3"  Grid.Column="0" Content="Статус:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Grid.Row="4"  Grid.Column="0" Content="Фак.номер:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <Label Grid.Row="5"  Grid.Column="0" Content="Курс:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Grid.Row="6"  Grid.Column="0"  Content="Поток:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Grid.Row="7"  Grid.Column="0" Content="Група:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox Grid.Row="0"  Grid.Column="1" x:Name="Faculty" HorizontalAlignment="Left" Height="23" Width="150" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Grid.Row="1"  Grid.Column="1" x:Name="Speciality" HorizontalAlignment="Left" Height="23" Width="150" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Grid.Row="2"  Grid.Column="1" x:Name="Degree" HorizontalAlignment="Left" Height="23" Width="150" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <ListBox Grid.Row="3"  Grid.Column="1" x:Name="Status" ItemsSource="{Binding StudStatusChoices}" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <TextBox Grid.Row="4"  Grid.Column="1" x:Name="FacNum" HorizontalAlignment="Left" Height="23" Width="150"  TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Grid.Row="5"  Grid.Column="1" x:Name="Course" HorizontalAlignment="Left" Height="23" Width="150"  TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Grid.Row="6"  Grid.Column="1" x:Name="Stream" HorizontalAlignment="Left" Height="23" Width="150"  TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Grid.Row="7"  Grid.Column="1" x:Name="Group" HorizontalAlignment="Left" Height="23"  Width="150"  TextWrapping="Wrap" VerticalAlignment="Top"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Button x:Name="TestButton" VerticalAlignment="Bottom" Margin="5" Height="30" Width="150" Grid.Row="2" Click="TestClick">Тест</Button>
+
+    </Grid>
+</Window>
